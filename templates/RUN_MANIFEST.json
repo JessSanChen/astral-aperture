@@ -1,0 +1,78 @@
+{
+  "schema_version": "0.1-proposed",
+  "status": "template_not_a_run",
+  "run_id": null,
+  "experiment_id": null,
+  "stage": null,
+  "approved_launch_reference": null,
+  "created_utc": null,
+  "code": {
+    "git_commit": null,
+    "dirty": null,
+    "patch_sha256": null,
+    "uv_lock_sha256": null,
+    "container_image_digest": null
+  },
+  "spec": {
+    "experiment_spec_sha256": null,
+    "resolved_config_sha256": null,
+    "policy_sha256": null,
+    "prompt_sha256": null,
+    "parser_version": null
+  },
+  "data": {
+    "dataset_manifest_sha256": null,
+    "split_manifest_sha256": null,
+    "oracle_version": null,
+    "renderer_versions": [],
+    "base_world_group_key": null,
+    "exposure_log_reference": null
+  },
+  "judge": {
+    "backend": null,
+    "requested_model_id": null,
+    "requested_provider_endpoint": null,
+    "weight_revision": null,
+    "tokenizer_revision": null,
+    "chat_template_sha256": null,
+    "serving_version": null,
+    "precision_quantization": null,
+    "decoding": {},
+    "allow_fallbacks": false,
+    "actual_identities_reference": null
+  },
+  "controller": {
+    "type": null,
+    "checkpoint_sha256": null,
+    "feature_spec_sha256": null,
+    "training_run_id": null
+  },
+  "execution": {
+    "hardware": {},
+    "seeds": {},
+    "replicate_rule": null,
+    "retry_rule": null,
+    "decision_lock_rule": null,
+    "access_boundary_check_reference": null
+  },
+  "counts": {
+    "scheduled_episodes": null,
+    "completed_episodes": null,
+    "failed_episodes": null,
+    "abstentions": null,
+    "retry_attempts": null
+  },
+  "resources": {
+    "actual_collection": {},
+    "actual_training": {},
+    "actual_replay": {},
+    "policy_replay_equivalent": {},
+    "fresh_latency_measurement": {}
+  },
+  "artifacts": [],
+  "pre_audit_metrics_reference": null,
+  "post_audit_metrics_reference": null,
+  "uncertainty_report_reference": null,
+  "invalidations": [],
+  "notes": "Template only. Evaluator metadata is never controller input."
+}

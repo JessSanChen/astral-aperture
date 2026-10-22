@@ -1,0 +1,25 @@
+{
+  "_status": "template_not_api_ready",
+  "external_calls_authorized": false,
+  "model_selection_approved": false,
+  "request": {
+    "model": "REPLACE_WITH_APPROVED_AVAILABLE_MODEL_ID",
+    "messages": [],
+    "provider": {
+      "only": [
+        "REPLACE_WITH_EXACT_AVAILABLE_ENDPOINT_SLUG"
+      ],
+      "allow_fallbacks": false,
+      "require_parameters": true,
+      "data_collection": "deny",
+      "zdr": true
+    }
+  },
+  "sampling_configuration": "UNRESOLVED: select, capability-check, and freeze explicitly",
+  "notes": [
+    "This outer application object must not be submitted as an API request.",
+    "No fallback or automatic model substitution is allowed for a fixed-judge arm.",
+    "Privacy settings must be checked against selected endpoints; incompatible routes should fail.",
+    "Endpoint selection does not establish immutable backend weights or deterministic generation."
+  ]
+}
