@@ -1,4 +1,4 @@
-# Experiment <id> — <title>
+# Experiment <id> -- <title>
 Status: draft / human-approved / frozen / running / completed / invalidated
 Scientific stage: plumbing / exploratory / pilot / confirmatory
 Approver and approval reference:
@@ -14,7 +14,7 @@ Controller(s) and strongest simple/action-aware/full-inspection baselines:
 Allowed actions and stop rule:
 Primary metric, denominator, and comparison condition:
 Secondary metrics and uncertainty/grouping:
-Resource vector and motivation (not research affordability):
+Inspection resource vector (a measured variable, not a spending limit):
 Stochastic samples, pairing, and sample-size rationale:
 Failure/abstention/refusal/timeout/truncation handling:
 Pre-audit lock and optional post-audit outcome:

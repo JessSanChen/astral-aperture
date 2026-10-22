@@ -18,7 +18,7 @@ List externally checkable behavior and tests. Do not define success as the model
 claiming it completed the task.
 
 ## Authorization and stop point
-Network/paid-call permissions:
+External API permissions:
 Cloud-write permissions:
 Data and test-label access:
 Explicit stopping condition:

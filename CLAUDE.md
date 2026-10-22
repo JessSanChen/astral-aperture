@@ -2,5 +2,4 @@
 
 @AGENTS.md
 
-Use the shared instructions above. Keep tool-specific notes here only when needed;
-do not duplicate the scientific policy into a second diverging document.
+Tool-specific notes go here only when needed. Do not duplicate AGENTS.md.

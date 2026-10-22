@@ -9,11 +9,10 @@ A judge call is not an oracle label. More context may help or hurt a fixed judge
 
 ## Current authority and status
 
-B1 was explicitly selected by the user; the algorithm is undecided. The user reports
-access to Claude Code, Codex, Runpod, OpenRouter, and other resources. Credentials,
-quotas, available models, licenses, region, repository access, and integrations have
-not been inspected. This pack proposes an implementation workflow; it does not
-approve a method or prove a result.
+B1 was explicitly selected by the user; the algorithm is undecided. The user has
+access to Claude Code, Codex, Runpod, and OpenRouter. Available models, licenses,
+and repository access have not been inspected. This scaffold proposes a workflow;
+it does not approve a method or prove a result.
 
 ## Reading order
 
@@ -24,12 +23,11 @@ approve a method or prove a result.
 5. `../context/ASTRAL_Project_Brief_v4_B1_Selected.md`: canonical supplied context.
 6. `../context/ASTRAL_Parallel_Research_Protocol.md`: B/C coordination.
 
-Do not load the entire historical conversation into every coding task. Read the
-specific task, interfaces, and current evidence; retrieve history only when needed.
-The pre-B1 handoff and literature ledger are preserved under `context/`, but their
-proposal status and older branch-selection statements must not override v4.
+Do not load the whole history into every task. The pre-B1 handoff and literature
+ledger under `context/` are preserved context; their older branch-selection
+statements do not override v4.
 
 ## First task
 
-Complete B1-000 (audit accessible code and constraints), then B1-001 (offline smoke
-slice). Start no external experiment until the human approves a run specification.
+B1-000 (audit accessible code), then B1-001 (offline smoke slice). No external
+experiment until the human approves a run specification.

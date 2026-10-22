@@ -1,70 +1,37 @@
-# ASTRAL B1 — bootstrap and knowledge-handoff pack
+# ASTRAL B1
 
-**21 October 2026 · version 0.1 · proposed implementation setup**
+Research scaffold for B1: transferable, action-specific inspection value for fixed,
+fallible judges. `docs/START_HERE.md` has the question and reading order.
 
-B1 is user-selected: study transferable action-specific inspection value for fixed,
-fallible judges. C remains independently active. The technology choices in this pack
-are recommendations, not newly approved scientific decisions.
+## What is here
 
-## What this pack is
-
-A repository-ready set of instructions, task contracts, experiment-record templates,
-and preserved project context. It is **not an implemented experiment harness**.
-No model API has been called, no Runpod infrastructure has been provisioned, no
-scientific experiment has been run, and no account credentials have been accessed.
-The only executable utility is `verify_pack.py`, which checks this pack's integrity.
-
-## Begin here
-
-1. Read `docs/START_HERE.md` and `docs/CURRENT_STATE.md`.
-2. Put this pack in a new research repository, or a separate research subtree after
-   auditing the existing repository. Do not overwrite an existing AGENTS.md or
-   CLAUDE.md without reconciling its instructions.
-3. Give a coding agent `prompts/01_BOOTSTRAP.md`. Start with task B1-000, then the
-   offline smoke slice B1-001. No paid inference or cloud provisioning is authorized
-   merely by opening this pack.
-4. Review its diff with a separate agent using `prompts/02_REVIEW.md` and human
-   review of labels and observation boundaries.
-5. End each task with `templates/HANDOFF.md`. Evidence is a commit, artifact, command,
-   and observed output—not an assertion that an agent remembers the work.
-
-## Suggested initial Git setup
-
-Run these only inside a newly created working copy of this pack:
+Agent instructions, task contracts, templates, preserved project context, and the
+B1-001 offline slice under `src/astral_b1/` (fictional workflow, mock judges, baseline
+controllers, evaluator, replay). No model API has been called, no infrastructure has
+been provisioned, and no scientific experiment has been run.
 
 ```bash
-python verify_pack.py
-git init -b main
-git add .
-git commit -m "Add B1 research bootstrap and handoff specification"
-git worktree add -b impl/B1-001 ../astral-b1-impl main
+uv sync
+uv run --locked pytest
+uv run --locked python -m astral_b1 smoke --output artifacts/smoke-001          # offline, mock judges
+uv run --locked python -m astral_b1 replay --input artifacts/smoke-001
+# Real judges (needs OPENROUTER_API_KEY and human authorization):
+uv run --locked python -m astral_b1 collect --output artifacts/pilot-001 --judges configs/judges.dev.json --authorized
+uv run --locked python -m astral_b1 pilot --input artifacts/pilot-001            # offline analysis of the bank
 ```
 
-Select your private Git hosting and push remote separately. This pack creates no
-remote. `git worktree` isolates checkouts, not credentials, agent memory, or secrets.
+Results so far are in `handoffs/`. The latest is the B1-003 pilot handoff.
 
-## Implemented versus specified
+## Workflow
 
-| Item | Status |
-|---|---|
-| Project source snapshots | Included, copied unchanged |
-| Agent instructions and task contracts | Included, proposed |
-| Run and request templates | Included; contain deliberate unresolved fields |
-| Research code, provider adapters, Dockerfile, CI, uv.lock | Not implemented |
-| ASTRAL repository inspection | Not performed |
-| Runpod/OpenRouter/account integration | Not performed |
-| Experimental findings | None |
+1. Read `docs/START_HERE.md` and `docs/CURRENT_STATE.md`.
+2. Give a coding agent `prompts/01_BOOTSTRAP.md`. Tasks run in order from `tasks/`.
+3. Review the diff with a separate agent using `prompts/02_REVIEW.md`.
+4. End each task with a handoff from `templates/HANDOFF.md`. Evidence is a commit,
+   a command, and observed output, not an agent's recollection.
 
-Do not run example API request templates unchanged. Select an available model,
-endpoint, license/terms, privacy setting, and sampling configuration first.
+## Authority
 
-## Knowledge authority
-
-Current explicit user instructions > confirmed project decisions > approved experiment
-specifications > proposed designs > historical discussion. The v4 project brief is
-included unchanged. The historical literature ledger is context, not newly verified
-bibliographic evidence. `docs/SOURCES.md` records tool documentation checked for this pack.
-
-`CHECKSUMS.json` records the original pack contents. After editing files, checksum
-mismatches are expected; use Git to track the working repository. No downstream
-code/data/model licensing is established by this pack.
+Current human instructions > confirmed decisions in `docs/DECISIONS.md` > approved
+experiment specs > proposals in `docs/` > historical discussion in `context/`.
+The `context/` files are preserved snapshots. Do not edit them.

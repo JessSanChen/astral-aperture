@@ -1,4 +1,4 @@
-# Minimal architecture — proposal
+# Minimal architecture -- proposal
 
 ## Principle
 
@@ -93,18 +93,11 @@ response bank does not establish behavior against a live adaptive actor.
 
 ## Storage and bookkeeping
 
-Use JSONL for chronological records and Parquet for analytic tables once useful.
-Use immutable object versions/content hashes, small Git manifests, and separate
-training/development/sealed-evaluation credentials. Artifact persistence and backup
-are distinct: keep a verified backup outside the Runpod worker lifecycle.
+Keep immutable, content-hashed artifacts with small Git manifests, and separate
+credentials for training, development, and sealed evaluation. Keep a verified backup
+outside any GPU worker's lifecycle. Any metrics tracker is optional; the local report
+must work without it and must never upload held-out examples or credentials.
 
-W&B is an optional metrics/config/run-ID dashboard, not the authoritative experiment
-record. Keep the local report usable without it. Do not enable raw prompt auto-tracing
-or upload held-out examples/credentials by default. A different approved tracker is
-fine; do not deploy multiple competing tracking systems at the start.
-
-Use uv with a committed lockfile and a pinned container image for real runs. CI
-should reject stale locks; recorded scientific runs should reject dirty source trees
-or capture an explicit patch hash and be marked exploratory. Record the Python,
-serving engine, model/tokenizer/chat template, precision/quantization, GPU/runtime,
-policy, decode settings, parser, and retry rule. A source commit alone is insufficient.
+Recorded scientific runs use a committed lockfile and a pinned image, and record the
+model, tokenizer, chat template, precision, serving engine, policy, decode settings,
+parser, and retry rule. A source commit alone is insufficient.

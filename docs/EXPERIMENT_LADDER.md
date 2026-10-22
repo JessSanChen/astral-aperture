@@ -1,4 +1,4 @@
-# Build and experiment ladder — proposed
+# Build and experiment ladder -- proposed
 
 ## Stage 0: audit, not redesign
 
@@ -8,7 +8,7 @@ integration. Preserve any baseline source/configuration at an immutable revision
 
 ## Stage 1: offline development smoke slice
 
-One harmless dummy-approval workflow; roughly 20–50 development executions; two
+One harmless dummy-approval workflow; roughly 20-50 development executions; two
 mock judges; stop/retrieve/reread actions; one acquisition initially. The exact count
 is an engineering choice, not a scientific sample-size justification.
 

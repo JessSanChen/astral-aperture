@@ -1,0 +1,8 @@
+{
+  "_status": "resolved for the B1-002 development run on 2026-10-22; user-approved identities",
+  "_verified_against": "GET https://openrouter.ai/api/v1/models and /models/<slug>/endpoints on 2026-10-22",
+  "judges": [
+    {"model": "anthropic/claude-sonnet-5.5", "provider": "anthropic", "max_tokens": 4000},
+    {"model": "anthropic/claude-opus-5.5", "provider": "anthropic", "max_tokens": 4000}
+  ]
+}
